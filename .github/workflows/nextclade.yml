@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: python --version
       - run: pip --version
+      - run: pip install wheel
       - run: pip install cwltool cwltest
       - run: docker --version
       - run: cwltest --tool cwltool --test tests.yml
