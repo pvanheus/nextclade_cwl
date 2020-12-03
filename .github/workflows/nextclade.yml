@@ -1,0 +1,15 @@
+name: learn-github-actions
+on: 
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  run_cwl_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pip install cwltool cwltest
+      - run: docker --version
+      - run: cwltest --tool cwltool --test tests.yml
