@@ -16,7 +16,6 @@ jobs:
           python-version: 3.8
       - run: python --version
       - run: pip --version
-      - run: pip install wheel
       - run: pip install cwltool
       - run: pip install cwltest
       - run: cwltest --tool cwltool --test tests.yml
