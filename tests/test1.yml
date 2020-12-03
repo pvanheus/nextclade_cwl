@@ -1,0 +1,13 @@
+input_fasta:
+  class: File
+  location: utah_sars_cov2.fasta
+  format: edam:format_1929
+output_options:
+  output_tsv_filename: utah.tsv
+
+
+$namespaces:
+  edam: http://edamontology.org/
+$schemas:
+  - http://edamontology.org/EDAM_1.18.owl
+

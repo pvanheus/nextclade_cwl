@@ -1,0 +1,12 @@
+- job: tests/test1.yml
+  tool: nextclade.cwl
+  output:
+    output_tsv:
+        basename: "utah.tsv"
+        class: "File"
+        checksum: "sha1$b9ab50aaae2af4947d27d6cc7fc3a22c3a82c203"
+        size: 7657
+        format: "http://edamontology.org/format_3475"
+  id: 1
+  doc: Test of nextclade generating a TSV output
+  tags: [ required, command_line_tool ]
