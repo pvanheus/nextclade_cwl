@@ -8,14 +8,15 @@ on:
 jobs:
   run_cwl_tests:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8]    
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+          uses: actions/setup-python@v2
+          with:
+          python-version: 3.8
       - run: python --version
       - run: pip --version
       - run: pip install wheel
-      - run: pip install cwltool cwltest
-      - run: docker --version
+      - run: pip install cwltool
+      - run: pip install cwltest
       - run: cwltest --tool cwltool --test tests.yml
